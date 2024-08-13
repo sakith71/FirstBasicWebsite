@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#F6EFF7;
+    font-family: "Poppins", sans-serif;
+    ;
+}
+.nav{
+    background-color:rgb(255, 123, 0);
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+    height: 90px;
+    width: 100%;
+    top: 0;
+    font-family:'Times New Roman';
+    position: fixed;
+    z-index: 1;
+}
+.nav .logo{
+    color: white;
+    font-size: 35px;
+    font-family: Arial;
+    padding-left: 50px;
+    padding-top: 5px;
+    float: left;
+}
+.navBar{
+    padding-left: 30%;
+    padding-top: 15px;
+
+}
+.navBar a{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+.navBar a:hover{
+    position: relative;
+    color: black;
+    border-radius: 15px;
+    background: white;
+    transition-duration: 0.3s;
+}
+.box11{
+    position: relative;
+    top: 100px;
+    z-index: 0;
+}
+.box11 p{
+    text-align: center;
+    margin: 30px 0px 10px 0px;
+    color: black;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.box11 h1{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: aquamarine;
+    padding: 70px 50px 0px 50px;
+    width: 45%;
+    max-width: 350px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.profile-img{
+    width:150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+
+}
+.inside{
+    text-align: center
+}
+.inside h3{
+    font-size: 1.4rem;
+    margin-top: 25px;
+    color: black;
+}
+
+.social-media{
+    margin-top: 30px;
+}
+.social-media i{
+    font-size: 2rem;
+    color: black;
+    background-color:#F6EFF7;
+    padding: 5px;
+    border-top-right-radius: 15px;
+    border-top-left-radius:15px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.social-media i:hover{
+    background-color: #F96D8C;
+    color:white;
+}
+
+.footer {
+    position:absolute;
+    width: 100%;
+    height: 150px;
+    top: 800px;
+    background-color: black;
+    color: whitesmoke;
+    font-size: 25px;
+    font-family: Arial;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 16px;
+    margin-top: 10px;
+}

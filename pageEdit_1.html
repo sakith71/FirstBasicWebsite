@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Page</title>
+    <style>
+        .editorBody {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        .editorHeader {
+            position: absolute;
+            top: 0;
+            left: 40%;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .editorHeader h1 {
+            margin: 0;
+            color: #333;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .editorInfo {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        .content {
+            margin-top: 12%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .editorPage {
+            width: 45%;
+            margin: 0 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+
+        }
+
+        .editorPage img {
+            width: 100%;
+            display: block;
+        }
+
+        .editorText {
+            padding: 20px;
+        }
+
+        .editorText p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .editorText a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .editorText a:hover {
+            text-decoration: underline;
+        }
+
+
+    </style>
+</head>
+<body class="editorBody">
+    <header class="editorHeader">
+        <h1>Page Editor</h1>
+        <hr>
+        <div class="editorInfo">
+            <strong>Name:</strong> Sakith Thewmika<br>
+            <strong>Role:</strong> Student 1<br>
+            <i>The following pages were edited by me!</i><br>
+        </div>
+        <hr>
+    </header>
+    <div class="content">
+        <div class="editorPage">
+            <img src="photo/splash.png" alt="splashScreen">
+            <div class="editorText">
+                <p>This HTML document defines a splash screen for a web application. It utilizes CSS for styling, including global styles for body, animation for the loading circle, and specific styles for headings, paragraphs, and lists. The splash container contains headings, a list of group members, and an animated loading circle. Additionally, it includes a JavaScript script to redirect to the homepage after 4 seconds.</p>
+                <a href="splashScreen.html">Link to splash Screen</a>
+            </div>
+        </div>
+
+        <div class="editorPage">
+            <img src="photo/shop.png" alt="shopPage">
+            <div class="editorText">
+                <p>This HTML document presents an online shop interface with responsive design and dynamic JavaScript functionality. It features a checkout page with form elements for billing address and payment information, including fields for name, email, address, country and card details. JavaScript manages cart interactions, filtering, and displaying the total price from URL parameters, ensuring a user-friendly experience.</p>
+                <a href="shop.html">Link to Shop</a>
+            </div>
+        </div>
+
+        <div class="editorPage">
+            <img src="photo/about.png" alt="aboutPage">
+            <div class="editorText">
+                <p>This HTML document represents an "About Us" page for SoPwer, an energy solutions provider. The page features a navigation bar for easy site navigation. Styled using CSS, it includes a semi-transparent white background for readability and a footer for branding. Content is written in English and describes the company's mission and services, emphasizing sustainability and customer satisfaction.</p>
+                <a href="about.html">Link to About</a>
+            </div>
+        </div>
+        <div class="editorPage">
+            <img src="photo/contact.png" alt="contactPage">
+            <div class="editorText">
+                <p>This HTML code creates a page displaying information about team members. It includes their names, roles, student IDs, profile images, and links to their social media profiles. The page also features a navigation bar with links to various sections of the website and a footer with copyright information.
+                </p>
+                <a href="contentPage.html">Link to Contact</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

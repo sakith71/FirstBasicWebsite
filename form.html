@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #video-background {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0; /* Ensure the video is behind other content */
+      }
+      .nav{
+          background-color:orangered;
+          padding: 20px;
+          box-shadow: 0 0 10px black;
+          height: 90px;
+          width: 100%;
+          top: 0;
+          position: fixed;
+          z-index: 2;
+      }
+      .nav .logo{
+          color: white;
+          font-size: 35px;
+          font-family: Arial;
+          padding-left: 50px;
+          padding-top: 5px;
+          float: left;
+      }
+      .navBar{
+          padding-left: 30%;
+          padding-top: 15px;
+
+      }
+      .navBar a{
+          text-align: center;
+          font-size: 20px;
+          color: white;
+          font-weight: 500;
+          padding-right: 15px;
+          padding-left: 15px;
+          text-decoration: none;
+          text-align: center;
+      }
+      .navBar a:hover{
+          position: relative;
+          color: black;
+          border-radius: 15px;
+          background: white;
+          transition-duration: 0.3s;
+      }
+
+      .container {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin-top: 120px;
+        margin-left: 31%;
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 20px;
+        border-radius: 8px;
+        position: absolute;
+        z-index: 1;
+        
+        box-shadow: 0 0 15px rgba(115, 250, 167, 0.5); /* Initial glow */
+        animation: neonGlow 1.5s infinite alternate; /* Neon glow animation */
+      }
+
+      @keyframes neonGlow {
+        0% {
+          box-shadow: 0 0 15px rgba(115, 250, 167, 0.5);
+        }
+        100% {
+          box-shadow: 0 0 25px rgba(115, 250, 167, 0.8);
+        }
+      }
+
+
+      .container h2 {
+        text-align: center;
+        color: #007bff;
+        font-family: Cambria, Cochin;
+        font-size: 45px;
+      }
+      #contact-email{
+        width: 500px;
+        height: 30px;
+        border: none;
+        border-radius: 2px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group span {
+        bottom: 12px;
+        right: 17px;
+        font-size: 14px;
+        color: red;
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      textarea {
+        resize: vertical;
+        height: 100px;
+      }
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        float: right;
+      }
+      input[type="reset"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+      .from group h4 {
+        text-align: center;
+      }
+
+      .Rate {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .Rate input[type="radio"] {
+        display: none; /* Hide the actual radio buttons */
+      }
+
+      .Rate label {
+        cursor: pointer;
+      }
+
+      .Rate img {
+        width: 50px;
+        margin: 0 10px;
+        border-radius: 50%;
+        border: 2px solid transparent; /* Add border for visual feedback */
+      }
+
+      .Rate input[type="radio"]:checked + label img {
+        border-color: #007bff; /* Style for selected state */
+        border-width: 5px;
+      }
+      .footer {
+        position:relative;
+        width: 100%;
+        height: 150px;
+        top: 900px;
+        background-color: black;
+        color: whitesmoke;
+        font-size: 25px;
+        font-family: Arial;
+        padding-top: 35px;
+        text-align: center;
+      }
+
+      .footer-text {
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop id="video-background">
+      <source src="image/2157006-hd_1920_1080_25fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="nav">
+      <h2 class="logo">SoPwer</h2>
+      <div class="navBar">
+          <a href="homePage.html">HOME</a>
+          <a href="about.html">ABOUT</a>
+          <a href="shop.html">SHOP</a>
+          <a href="form.html">FEEDBACK</a>
+          <a href="contentPage.html">CONTACT</a>
+      </div>
+  </div>
+    <div class="container">
+      <h2>
+        We'd love to hear <br />
+        from you
+      </h2>
+      <form id="feedbackForm">
+        <div class="form-group">
+          <label for="contact-name">Your Name:</label>
+          <input
+            type="text"
+            placeholder="Enter your name "
+            id="contact-name"
+            onkeyup="validateName()"
+          />
+          <span id="name-error">* Name is required </span>
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Your Email:</label><br />
+          <input
+            type="email"
+            name="email"
+            placeholder="  Enter your email"
+            id="contact-email"
+            onkeyup="validateEmail()"
+          /><br/>
+          <span id="email-error">* email is required</span>
+        </div>
+        <div class="form-group">
+          <h4>Was this your first time visiting?</h4><br>
+          <input type="radio" id="firstTimeYes" name="firstTime" value="yes" />
+          <label for="firstTimeYes">YES</label>
+          <input type="radio" id="firstTimeNo" name="firstTime" value="no" />
+          <label for="firstTimeNo">NO</label>
+        </div>
+        <div class="form-group">
+          <h4>Was this website informative and easy to navigate through?</h4><br>
+          <input
+            type="radio"
+            id="informativeYes"
+            name="informative"
+            value="yes"
+          />
+          <label for="informativeYes">YES</label>
+          <input
+            type="radio"
+            id="informativeNo"
+            name="informative"
+            value="no"
+          />
+          <label for="informativeNo">NO</label>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Feedback:</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <h4>Rate Your Experience :</h4><br>
+          <div class="Rate" id="rate">
+            <input type="radio" id="rate1" name="rate" value="Bad" />
+            <label for="rate1">
+              <img src="image/emoj1.png" alt="Option 1" />
+            </label>
+            <input type="radio" id="rate2" name="rate" value="Good" />
+            <label for="rate2">
+              <img
+                src="image/emoj2.png"
+                alt="Option 2"
+              />
+            </label>
+            <input type="radio" id="rate3" name="rate" value="Very good" />
+            <label for="rate3">
+              <img
+                src="image/emoj3.png"
+                alt="Option 3"
+              />
+            </label>
+            <input type="radio" id="rate4" name="rate" value="Happy" />
+            <label for="rate4">
+              <img
+                src="image/emoj4.png"
+                alt="Option 4"
+              />
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Submit" />
+        </div>
+        <div>
+          <input type="reset" value="reset" />
+        </div>
+      </form>
+
+      <div id="Confirmation" style="display: none">
+        <h1>Submit Details</h1>
+        <div id="detailsID"></div>
+        <button type="submit" onclick="sendMail()">Submit</button>
+        <button type="button" onclick="editButtonClick()">Back</button>
+      </div>
+    </div>
+    <div class="footer">
+      <h2>SoPwer</h2>
+      <p class="footer-text">Powering Tomorrow, Today.</p>
+      <p class="footer-text">All rights reserved. © SoPwer 2024</p>
+    </div>
+
+    <script>
+      var nameError = document.getElementById("name-error");
+      var emailError = document.getElementById("email-error");
+
+      function validateName() {
+        var name = document.getElementById("contact-name").value;
+
+        if (name.length == 0) {
+          nameError.innerHTML = "Name is required";
+          return false;
+        }
+        if (!name.match(/^[A-Za-z\s'-]+$/)) {
+          nameError.innerHTML = "Write your name correctly";
+          return false;
+        }
+        nameError.innerHTML = "";
+        return true;
+      }
+
+      function sendMail() {
+    const email ="akithaudara82@gmail.com";
+    alert("Succesfully submit feedback! ")
+    
+    location.href = "mailto:"+email;
+    location.reload();
+}
+
+      function editButtonClick() {
+        document.getElementById("Confirmation").style.display = "none";
+        document.getElementById("feedbackForm").style.display = "block";
+      }
+      function validateEmail() {
+        var email = document.getElementById("contact-email").value;
+        if (email.length == 0) {
+          emailError.innerHTML = "email is required";
+          return false;
+        }
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+          emailError.innerHTML = "email invaild";
+          return false;
+        }
+        emailError.innerHTML = "";
+        return true;
+      }
+
+      function displayFormDetails() {
+        var name = document.getElementById("contact-name").value;
+        var email = document.getElementById("contact-email").value;
+        var firstTime = document.querySelector(
+          'input[name="firstTime"]:checked'
+        ).value;
+        var informative = document.querySelector(
+          'input[name="informative"]:checked'
+        ).value;
+        var message = document.getElementById("message").value;
+        var rate = document.querySelector('input[name="rate"]:checked').value;
+
+        // Construct the details string
+        // Construct the details string
+        var details = "Name: " + name + "<br>";
+        details += "Email: " + email + "<br>";
+        details += "First Time Visiting: " + firstTime + "<br>";
+        details += "Informative and Easy to Navigate: " + informative + "<br>";
+        details += "Feedback: " + message + "<br>";
+        details += "Rate: " + rate;
+
+        document.getElementById("detailsID").innerHTML = details;
+
+        // Display details in a new window or modal
+        document.getElementById("feedbackForm").style.display = "none";
+        document.getElementById("Confirmation").style.display = "block";
+      }
+
+      // Attach event listener to the form submission
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+          if (validateName() && validateEmail()) {
+            displayFormDetails();
+            // Optionally, you can submit the form here if needed
+          } else {
+            submitError.innerHTML = "Complete the form properly";
+          }
+        });
+    </script>
+  </body>
+</html>

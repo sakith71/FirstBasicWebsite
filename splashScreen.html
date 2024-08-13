@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: cursive;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position:relative;
+            background-image: url("image/backgroungImage1.jpeg");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        /* Animated Circle Styles */
+        .content{
+            margin-left:47%;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            border-radius: 100%;
+            text-align: center;
+            line-height: 100px;
+            font-family: sans-serif;
+            color: #00ffee;
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px #000000 ;
+        }
+        .content:before {
+            content:"";
+            position: absolute;
+            top: -3px; 
+            left: -3px; 
+            width: 100%; 
+            height: 100%;
+            border-top: 5px solid #00ffee;
+            border-right: 5px solid #00ffee; 
+            border-radius: 100%;
+            animation: animate 1s linear infinite;
+        }
+
+        /* Animation Keyframes */
+        @keyframes animate{
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Splash Container Styles */
+        .splash-container {
+            text-align: center;
+        }
+
+        /* Heading Styles */
+        h1 {
+            font-size: 60px;
+            color:rgb(1, 1, 73);
+            position:relative;
+            line-height: 0.7;
+        }
+
+        /* Top Span Styles */
+        .top{
+            font-size: 150px;
+            color:rgba(1, 1, 73, 0.5);
+            position:relative;
+        }
+
+        /* Subheading Styles */
+        h2 {
+            font-size: 45px;
+            color:rgb(5, 5, 154);
+            position:relative;
+            text-shadow:0.5px 0 0 #caf47c;
+        }
+
+        /* Paragraph Styles */
+        p {
+            font-size: 40px;
+            color: #4440bd;
+            position: relative;
+            line-height: 0.7;
+            text-shadow:0.5px 0 0 #d0ff00;
+        }
+
+        /* Unordered List Styles */
+        ul{
+            color:rgb(13, 13, 20);
+            font-size: 30px;
+            list-style-type:none;
+            position: relative;
+            text-shadow:
+            0.5px 0.5px 0 #d9ff00,
+            0.5px -0.5px 0 #d9ff00;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Splash Screen Content -->
+    <div class="splash-container">
+        <!-- Main Heading -->
+        <h1> <span class="top">AFFORDABLE</span> <br>
+            AND CLEAN ENERGY</h1>
+        <!-- Subheading -->
+        <h2>The Future is Now</h2>
+        <!-- Group Members List -->
+        <p>Group Members:</p>
+        <ul>
+            <!-- List Items -->
+            <li>Sakith Thewmika</li>
+            <li>Akitha Udara</li>
+        </ul>
+        <!-- Animated Circle Element -->
+        <div class="content">
+            <b>Loading</b>
+        </div>
+    </div>
+
+    <!-- Script to Redirect after 4 seconds -->
+    <script>
+        setTimeout(function() {
+            window.location.href = "homePage.html";
+        }, 4000); // Change this value to 4000 for 4 seconds(4000ms)
+    </script>
+</body>
+</html>

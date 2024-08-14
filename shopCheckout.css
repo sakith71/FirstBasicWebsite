@@ -1,0 +1,110 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+/* Container styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    min-height: 100vh;
+    background-image: url("image/backgroungImage2.jpeg"); /* Background image */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* Form styles */
+.container form {
+    padding: 20px;
+    width: 700px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+/* Box and Line layout styles */
+.container form .box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.container form .box .line {
+    flex: 1 1 250px;
+}
+
+/* Title styles */
+.container form .box .line .title {
+    font-size: 20px;
+    color: #333;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* Input box styles */
+.container form .box .line .inputBox {
+    margin: 15px 0;
+}
+
+.container form .box .line .inputBox input {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.container form .box .line .inputBox input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 15px;
+    text-transform: none;
+}
+
+.container form .box .line .inputBox input:focus {
+    border: 1px solid #000;
+}
+
+/* Flex layout styles */
+.container form .box .line .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.container form .box .line .flex .inputBox {
+    margin-top: 5px;
+}
+
+/* Card image styles */
+.container form .box .line .inputBox img {
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+/* Submit button styles */
+.container form .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background: rgb(167, 142, 4);
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* Link styles */
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    margin-left: 45%;
+}
+
+.container form .submit-btn:hover {
+    background: #2ecc71;
+}
